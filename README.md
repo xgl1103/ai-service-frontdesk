@@ -1,8 +1,22 @@
 # AI Service Frontdesk
 
-AI Service Frontdesk is a 90-minute MVP for a local-service AI front desk. It helps small service businesses collect customer inquiries, ask for missing details, generate reference quote drafts, and save leads for follow-up.
+AI Service Frontdesk 是一个面向本地生活服务商家的 AI 前台应用。它可以结合企业知识库回答客户问题，收集服务需求，追问缺失信息，生成参考报价，并将询盘保存为待跟进线索。
 
-The first version uses Streamlit for the demo UI, LangGraph and LangChain for the AI flow, DeepSeek for LLM calls when configured, and local JSON files for storage. A FastAPI adapter is also available for the React frontend upgrade.
+项目使用 React、FastAPI、LangGraph 和 LangChain 构建。配置 DeepSeek API 后，对话流程会优先调用大模型；未配置 API Key 时，内置规则和本地 RAG 检索仍可支持基础演示。
+
+## Interface Preview
+
+### Customer Chat
+
+![客户咨询页](docs/images/customer-chat.png)
+
+### Home Dashboard
+
+![功能入口页](docs/images/home-dashboard.png)
+
+### Leads Board
+
+![线索看板](docs/images/leads-board.png)
 
 ## Project Structure
 
@@ -21,7 +35,7 @@ The first version uses Streamlit for the demo UI, LangGraph and LangChain for th
 ├── .env.example
 ├── data/
 │   ├── business.json
-│   └── leads.json
+│   └── leads.json  # Generated locally at runtime and not committed
 ├── knowledge/
 │   ├── company.md
 │   ├── pricing.md
