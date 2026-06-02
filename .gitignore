@@ -1,0 +1,13 @@
+.env
+.env.*
+!.env.example
+__pycache__/
+*.pyc
+node_modules/
+dist/
+*.tsbuildinfo
+*.log
+data/leads.json
+data/knowledge_index.json
+*-verified.png
+mainframe-landing/
